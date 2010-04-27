@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-#include_recipe "java"
+include_recipe "java"
 
 service "tomcat6" do
   action :nothing
@@ -175,7 +175,7 @@ end
 
 service "tomcat6" do
   case node[:platform]
-  when "centos"
+  when "centos", "ubuntu"
     service_name "tomcat6"
   else
     name "tomcat"

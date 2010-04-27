@@ -10,6 +10,10 @@ recipe            "tomcat6", "Main Tomcat 6 configuration"
   supports os
 end
 
+%w{java}.each do |dep|
+  depends dep
+end
+
 attribute "tomcat6/with_native",
   :display_name => "Tomcat native support",
   :description => "works for centos, install tomcat-native libraries",
